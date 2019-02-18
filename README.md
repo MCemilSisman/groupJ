@@ -3,7 +3,7 @@
 # Group number: 1J
 
 # Group Member Names:
-Mert Özerdem/21300835
+Mert Özerdem/21300835\n
 Onur Mermer/21600878
 
 # Project Topic: 
