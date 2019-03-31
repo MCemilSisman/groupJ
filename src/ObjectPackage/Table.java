@@ -11,6 +11,7 @@ public class Table {
 	BlockType f = BlockType.FILLED;
 	BlockType b = BlockType.BLOCK;
 	BlockType r = BlockType.RED;
+	BlockType s = BlockType.SPACE;
 	
 	
 	public Table(int tableSizeX, int tableSizeY) {
@@ -26,15 +27,15 @@ public class Table {
 		super();
 		BlockType[][] table = {
 				//	 0  1  2  3  4  5  6  7  8  9
-					{b, b, b, b, b, b, b, b, b, b},
-					{e, e, e, e, e, e, f, f, e, b},
-					{b, e, e, e, e, e, f, b, e, b},
-					{b, e, e, b, b, b, f, b, e, b},
-					{b, e, e, b, r, b, e, b, e, b},
-					{b, e, e, b, e, b, e, b, e, b},
-					{b, e, e, b, e, e, e, b, e, b},
-					{b, e, e, b, b, b, b, b, e, b},
-					{b, b, b, b, b, b, b, b, b, b}
+					{s, s, s, s, s, b, s, s, s, s},//0
+					{s, b, b, b, b, e, b, b, b, b},//1
+					{s, b, e, e, e, e, f, e, e, b},//2
+					{s, b, e, b, b, e, f, e, b, b},//3
+					{s, b, e, b, r, b, e, b, e, s},//4
+					{s, b, e, b, e, b, e, b, e, s},//5
+					{s, b, e, b, e, e, e, b, e, s},//6
+					{s, b, b, b, b, b, b, b, e, s},//7
+					{s, s, s, s, s, s, s, s, s, s} //8
 			};
 		TableSizeX = 10;
 		TableSizeY = 9;
@@ -58,8 +59,9 @@ public class Table {
 		return this.TableStatus[positionX][positionY];
 	}
 	
-	
-	
+	public void setLocationEnum(int positionX, int positionY, BlockType type) {
+		TableStatus[positionX][positionY] = BlockType.MARKED;
+	}
 	
 
 	//Getters and Setters

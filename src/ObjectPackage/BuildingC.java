@@ -27,4 +27,9 @@ public class BuildingC extends Buildings{
 		setRotationType(0);
 	}
 
+	public BuildingC(BlockType[][] blockSize, int rotationType) {
+		super(blockSize, rotationType);
+		
+	}
+	
 }

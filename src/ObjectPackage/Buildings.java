@@ -27,5 +27,12 @@ public class Buildings extends Blocks{
 		setBlockSize(blockConfiguration);
 		setRotationType(0);*/
 	}
+
+	public Buildings(BlockType[][] blockSize, int rotationType) {
+		super(blockSize, rotationType);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }
