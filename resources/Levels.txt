@@ -1,0 +1,13 @@
+$
+Code:B11 TableSize:10x10 RedCar:2,5
+BlockA:0 BlockB:1 BlockC:2
+
+-----bbb--
+b---------
+b---------
+b---bb----
+---bbb----
+--r-------
+
+$
+Code:B12
