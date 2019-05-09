@@ -1,0 +1,20 @@
+$Code:A00 TableSize:6x6 NumberOfBlocks:6#
+[CarA:1 CarB:1 CarC:1 CarD:1 CarE:1 CarF:1 ]
+*
+/bbbbbb/
+/b--b-b/
+/b--r--/
+/b-----/
+/b-----/
+/bb----/
+*
+$Code:A01 TableSize:6x6 NumberOfBlocks:6#
+[CarB:2 CarC:1 CarD:1 CarE:1 CarF:1 ]
+*
+/bbbb--/
+/b-b---/
+/b-b-r-/
+/b-----/
+/b----b/
+/b--bbb/
+*
