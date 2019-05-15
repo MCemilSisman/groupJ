@@ -7,12 +7,9 @@ public class LevelManager
 {
 	static FileInputStream in;
 	
-	public LevelManager() throws FileNotFoundException
-	{
-		in = new FileInputStream("resources//Levels");
-	}
 	public static Level loadLevel(String levelCode) throws IOException
 	{
+		in = new FileInputStream("resources//Levels");
 		Level current = new Level();
 		boolean foundFlag = false;
 		char temp;
@@ -54,7 +51,7 @@ public class LevelManager
 					}
 				}
 			}
-			System.out.println(foundFlag);
+			//System.out.println(foundFlag);
 			if(foundFlag == true)
 			{
 				boolean loadedFlag = false;
@@ -88,7 +85,7 @@ public class LevelManager
 								entity = "";
 								sizeFlag = true;
 							}
-							System.out.println(sizeFlag);
+							//System.out.println(sizeFlag);
 						}
 						System.out.println(sizeX + "x" + sizeY);
 						current.createTable(sizeX, sizeY);
@@ -190,6 +187,27 @@ public class LevelManager
 										times--;
 									}
 									break;
+								case "CarG":
+									while(times > 0)
+									{
+										current.addBlock(new CarG());
+										times--;
+									}
+									break;
+								case "CarH":
+									while(times > 0)
+									{
+										current.addBlock(new CarH());
+										times--;
+									}
+									break;
+								case "CarI":
+									while(times > 0)
+									{
+										current.addBlock(new CarI());
+										times--;
+									}
+									break;
 								}
 								entity = "";
 							}
@@ -236,8 +254,125 @@ public class LevelManager
 				}
 			}
 		}
-		in = new FileInputStream("resources//Levels");
+		in.close();
 		return current;
+	}
+	
+	public static int getLevelNumber() throws IOException
+	{
+		in = new FileInputStream("resources//Levels");
+		int numberOfLevel = 0;
+		int i;
+		char temp;
+		
+		while(in.available() != 0)
+		{
+			i = in.read();
+			temp = (char)i;
+			if(temp == '$')
+				numberOfLevel++;
+		}
+		
+		
+		in.close();
+		
+		return numberOfLevel;
+	}
+	
+	public static void saveLevel(Level level) throws IOException {
+		
+		String levelText = "\n$Code:A";
+		
+		int levelCount = 0;
+		int ch;
+		FileInputStream fin = new FileInputStream("resources//Levels");
+		
+		while((ch=fin.read())!=-1) {
+        	char temp = (char)ch; 
+        	if (temp == '$') {
+        		levelCount++;
+        	}		
+		}
+		
+		if (levelCount > 9) {
+			levelText = levelText + levelCount;
+		}
+		else {
+			levelText = levelText + "0" + levelCount + " ";
+		}
+		
+		int posX = level.getTable().getTableSizeX();
+		int posY = level.getTable().getTableSizeY();
+		
+		levelText = levelText + "TableSize:" + posX + "x" + posY + " ";
+		
+		Blocks[] blockArr = level.getBlocks();
+		int noBlocks = blockArr.length;
+		levelText = levelText + "NumberOfBlocks:" + noBlocks +"#\n";
+		
+		levelText = levelText + "[";
+		
+		Blocks prev;
+		int times;
+		for(int i = 0; i < blockArr.length; i++)
+		{
+			if(blockArr[i] != null)
+			{
+				if(blockArr[i].getCoordinateX() != -1)
+				{
+					prev = blockArr[i];
+					times = 1;
+					for(int k = i + 1; k < blockArr.length; k++)
+					{
+						System.out.println(blockArr[k].getClass() + " ve " + prev.getClass());
+						if(blockArr[k].getClass().equals(prev.getClass()) && blockArr[k] != null)
+						{
+							if(blockArr[k].getCoordinateX() != -1)
+							{
+								times++;
+								blockArr[k] = null;
+							}
+						}
+					}
+					levelText = levelText + (prev.getImage().replace("resources//", "")).replace(".png", "") + ":" + times + " ";
+					blockArr[i] = null;
+					for(int j = 0; j < blockArr.length; j++)
+						System.out.println(blockArr[j]);
+				}
+			}
+		}
+		levelText = levelText + "]\n*\n";
+		for(int i = 0; i < level.getTable().getTableSizeX(); i++)
+		{
+			levelText = levelText + "/";
+			for(int j = 0; j < level.getTable().getTableSizeY(); j++)
+			{
+				if(level.getTable().returnLocationEnum(j, i).equals(BlockType.EMPTY))
+				{
+					levelText = levelText + "-";
+				}
+				else if(level.getTable().returnLocationEnum(j, i).equals(BlockType.BLOCK))
+				{
+					levelText = levelText + "b";
+				}
+				else if(level.getTable().returnLocationEnum(j, i).equals(BlockType.RED))
+				{
+					levelText = levelText + "r";
+				}
+			}
+			levelText = levelText + "/\n";
+		}
+		levelText = levelText + "*";
+		
+		FileWriter appender = new FileWriter("resources//Levels", true);
+		
+		PrintWriter newfile = new PrintWriter(appender);
+        
+        newfile.print(levelText);
+        
+        newfile.close();
+		
+		fin.close();
 	}
 	
 	/*

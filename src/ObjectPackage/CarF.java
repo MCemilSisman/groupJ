@@ -12,7 +12,7 @@ public class CarF extends PoliceCar{
 		super();
 		
 		//Getting image and Block configurations
-		String Image = "resources//CarD2.png";
+		String Image = "resources//CarF.png";
 		setImage(Image);
 		
 		BlockType e = BlockType.EMPTY;

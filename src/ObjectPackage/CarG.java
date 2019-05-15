@@ -7,21 +7,21 @@ import java.io.FileNotFoundException;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class CarA extends PoliceCar {
+public class CarG extends PoliceCar {
 
-	public CarA() throws FileNotFoundException {
+	public CarG() throws FileNotFoundException {
 		super();
 		
 		//Getting image and Block configurations
-		String Image = "resources//CarA.png";
+		String Image = "resources//CarG.png";
 		setImage(Image);
 		
 		BlockType e = BlockType.EMPTY;
 		BlockType f = BlockType.FILLED;
 		BlockType b = BlockType.BLOCK;
 		BlockType[][] blockConfiguration = {
-				{f, f, f},
-				{e, b, e},
+				{f, b, f},
+				{e, f, e},
 				{e, e, e}
 		};
 		setBlockSize(blockConfiguration);

@@ -1,6 +1,16 @@
 $Code:A00 TableSize:6x6 NumberOfBlocks:6#
 [CarA:1 CarB:1 CarC:1 CarD:1 CarE:1 CarF:1 ]
 *
+/bbbb--/
+/b-b---/
+/--b-r-/
+/b-----/
+/b----b/
+/b--bbb/
+*
+$Code:A01 TableSize:6x6 NumberOfBlocks:6#
+[CarA:1 CarB:1 CarC:1 CarD:1 CarE:1 CarF:1 ]
+*
 /bbbbbb/
 /b--b-b/
 /b--r--/
@@ -8,7 +18,39 @@ $Code:A00 TableSize:6x6 NumberOfBlocks:6#
 /b-----/
 /bb----/
 *
-$Code:A01 TableSize:6x6 NumberOfBlocks:6#
+$Code:A02 TableSize:8x8 NumberOfBlocks:11#
+[CarA:1 CarB:2 CarC:2 CarD:1 CarE:2 CarF:3 ]
+*
+/b-bbb--b/
+/b------b/
+/b----b--/
+/bbbr----/
+/------bb/
+/-b-bb---/
+/bb-bbbb-/
+/b---bb--/
+*
+$Code:A03 TableSize:6x6 NumberOfBlocks:6#
+[CarE:1 CarF:1 CarG:2 CarH:1 CarI:1 ]
+*
+/bb-bbb/
+/b-----/
+/b-----/
+/-----b/
+/--r--b/
+/-bbbbb/
+*
+$Code:A04 TableSize:6x6 NumberOfBlocks:7#
+[CarA:1 CarB:1 CarD:1 CarE:4 CarF:1 ]
+*
+/---bbb/
+/------/
+/---b-b/
+/------/
+/br--b-/
+/bbb-bb/
+*
+$Code:A05 TableSize:6x6 NumberOfBlocks:6#
 [CarB:2 CarC:1 CarD:1 CarE:1 CarF:1 ]
 *
 /bbbb--/
@@ -17,4 +59,64 @@ $Code:A01 TableSize:6x6 NumberOfBlocks:6#
 /b-----/
 /b----b/
 /b--bbb/
+*
+$Code:A06 TableSize:6x6 NumberOfBlocks:7#
+[CarA:1 CarB:1 CarD:1 CarE:1 CarF:2 CarG:1 ]
+*
+/bbb-bb/
+/br---b/
+/------/
+/----bb/
+/b----b/
+/------/
+*
+$Code:A07 TableSize:8x8 NumberOfBlocks:9#
+[CarA:2 CarB:3 CarD:1 CarE:1 CarF:2 ]
+*
+/bbbbb--b/
+/bb-----b/
+/bb--bb--/
+/b---bb--/
+/bb------/
+/bbb----b/
+/---bb-rb/
+/bbbbbbbb/
+*
+$Code:A08 TableSize:8x8 NumberOfBlocks:12#
+[CarA:1 CarB:1 CarC:1 CarD:1 CarE:3 CarF:1 CarG:2 CarH:2 ]
+*
+/--b--bbb/
+/b-----rb/
+/----b--b/
+/-b-----b/
+/---bbb-b/
+/b-------/
+/b---bb-b/
+/bb--b---/
+*
+$Code:A09 TableSize:6x6 NumberOfBlocks:7#
+[CarA:1 CarB:1 CarC:1 CarD:1 CarE:2 CarG:1 ]
+*
+/---bb-/
+/------/
+/------/
+/bb-r-b/
+/b----b/
+/bbb---/
+*
+$Code:A10 TableSize:12x12 NumberOfBlocks:19#
+[CarA:2 CarB:2 CarC:3 CarD:3 CarE:3 CarF:2 CarG:1 CarH:3 ]
+*
+/bbbbbbbbbbbb/
+/----bbbbbb--/
+/--bbbbb----b/
+/--bbbbbb-b-b/
+/----bbbb-b-b/
+/bbb-bb-----b/
+/b-b-bb-----b/
+/--r-----b---/
+/b-bb---bb--b/
+/bb-----b----/
+/bb-bb--b-b--/
+/bb----bbbbb-/
 *

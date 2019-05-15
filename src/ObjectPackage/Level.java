@@ -37,6 +37,52 @@ public class Level {
             }
         }
         
+        public void addEditorBlock(Blocks added)
+        {
+        	if(blocksArray != null)
+        	{
+	        	Blocks[] temp = new Blocks[noOfBlocks + 1];
+	        	for(int i = 0; i < noOfBlocks; i++)
+	        		temp[i] = blocksArray[i];
+	        	temp[noOfBlocks] = added;
+	        	blocksArray = temp;
+        	}
+        	else
+        	{
+        		blocksArray = new Blocks[1];
+        		blocksArray[0] = added;
+        	}
+        	noOfBlocks++;
+        }
+        
+        public void removeEditorBlock(Blocks removed)
+        {
+        	if(noOfBlocks != 1)
+        	{
+	        	Blocks[] temp = new Blocks[noOfBlocks - 1];
+	        	boolean found = false;
+	        	for(int i = 0; i < noOfBlocks; i++)
+	        	{
+	        		if((!(blocksArray[i].equals(removed))) && !found)
+	        		{
+	        			temp[i] = blocksArray[i];
+	        		}
+	        		else if(found)
+	        		{
+	        			temp[i - 1] = blocksArray[i];
+	        		}
+	        		else
+	        			found = true;
+	        	}
+	        	blocksArray = temp;
+        	}
+        	else
+        	{
+        		blocksArray = null;
+        	}
+        	noOfBlocks--;
+        }
+        
         public Table getTable(){
             return table;
         }
